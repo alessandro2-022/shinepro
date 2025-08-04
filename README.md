@@ -29,7 +29,7 @@ shinepro_site/
 
 ## 📍 Endereço
 
-[R. Dr. Ferdinando Cyrne, 175 - Aeroporto, Juiz de Fora - MG, 36038-140](https://g.co/kgs/iTpshKM)
+(https://g.co/kgs/94gkP8Z)
 
 ## 📞 Contato via WhatsApp
 
