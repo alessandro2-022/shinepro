@@ -82,9 +82,7 @@ footer {
 footer a {
   color: #25D366;
   text-decoration: none;
-}
- footer {
-      text-align: center;
-      color: #777;
-      padding: 20px;
+  text-align: center;
+  color: #777;
+  padding: 20px;
     }
