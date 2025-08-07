@@ -78,11 +78,11 @@ footer {
   justify-content: space-around;
   padding: 20px;
   flex-wrap: wrap;
+  text-align: center;
+  color: #777;
+  padding: 20px;
 }
 footer a {
   color: #25D366;
   text-decoration: none;
-  text-align: center;
-  color: #777;
-  padding: 20px;
     }
