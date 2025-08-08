@@ -20,7 +20,7 @@ header {
   height: 300px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: absolute;
   position: relative;
   color: white;
   text-shadow: 1px 1px 3px #000;
