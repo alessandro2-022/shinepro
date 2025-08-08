@@ -98,21 +98,7 @@
       <button type="submit" style="padding: 10px 20px; background-color: #25D366; color: #fff; border: none; border-radius: 5px;">Confirmar Agendamento</button>
     </form>
   </section>
-   <script>
-    function enviarWhatsApp(e) {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const telefone = document.getElementById('telefone').value;
-      const veiculo = document.getElementById('veiculo').value;
-      const datahora = document.getElementById('datahora').value;
-
-      const mensagem = `*Agendamento ShinePro*%0A%0ANome: ${nome}%0AEmail: ${email}%0ATelefone: ${telefone}%0AVeículo: ${veiculo}%0AData/Hora: ${datahora}`;
-
-      window.open(`https://wa.me/553239373903?text=${mensagem}`, '_blank');
-    }
-  </script>
-
+  
   <footer>
     <div>
       <p>📍 <a href="https://g.co/kgs/94gkP8Z" target="_blank">localização</a></p>
@@ -128,6 +114,21 @@
   <footer style="text-align: center; padding-bottom: 10px; font-size: 0.8em; color: #777;">
     &copy; 2025 ShinePro Estética Automotiva. Todos os direitos reservados.
   </footer>
-  
+
+  <script>
+    function enviarWhatsApp(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+      const veiculo = document.getElementById('veiculo').value;
+      const datahora = document.getElementById('datahora').value;
+
+      const mensagem = `*Agendamento ShinePro*%0A%0ANome: ${nome}%0AEmail: ${email}%0ATelefone: ${telefone}%0AVeículo: ${veiculo}%0AData/Hora: ${datahora}`;
+
+      window.open(`https://wa.me/553239373903?text=${mensagem}`, '_blank');
+    }
+  </script>
+
 </body>
 </html>
