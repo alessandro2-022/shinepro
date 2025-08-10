@@ -12,7 +12,15 @@
 <body>
   <header>
     <img src="logo-shinepro.png.png" alt="Logo ShinePro" class="logo">
+     <button id="btnHistoria" class="historia-btn">Sobre Nós</button>
   </header>
+<section id="historia" style="display: none; padding: 20px; background-color: white; color: black;">
+  <h2>Sobre a ShinePro</h2>
+  <p>
+    A ShinePro Estética Automotiva nasceu com o propósito de transformar veículos, trazendo brilho, proteção e cuidado profissional.
+    Trabalhamos com paixão para entregar o melhor resultado e superar expectativas.
+  </p>
+</section>
 
  <section class="banner" style="
     background-image: url('banner.png');
@@ -138,6 +146,12 @@
       window.open(`https://wa.me/553239373903?text=${mensagem}`, '_blank');
     }
   </script>
+<script>
+  document.getElementById("btnHistoria").addEventListener("click", function () {
+    const secao = document.getElementById("historia");
+    secao.style.display = secao.style.display === "none" ? "block" : "none";
+  });
+</script>
 
 </body>
 </html>
