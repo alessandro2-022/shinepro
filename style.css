@@ -20,13 +20,10 @@ header {
   height: 300px;
   display: flex;
   align-items: center;
-  justify-content: absolute;
+  justify-content:center;
   position: relative;
   color: white;
   text-shadow: 1px 1px 3px #000;
-
-}
-.banner {
   text-align: center;
   padding: 40px 20px;
 }
@@ -38,7 +35,7 @@ header {
 
 .banner::after {
   content: "";
-  position: center;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
