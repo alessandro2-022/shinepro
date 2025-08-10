@@ -97,3 +97,17 @@ footer a {
   color: #25D366;
   text-decoration: none;
     }
+    .historia-btn {
+  margin-left: auto;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.historia-btn:hover {
+  background-color: white;
+  color: black;
+}
