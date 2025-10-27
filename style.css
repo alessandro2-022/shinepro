@@ -1,155 +1,110 @@
-
-corpo {
- família de fontes: Arial, sans-serif; 
- margem: 0; 
- preenchimento: 0; 
- cor de fundo: # 111; 
- Cor: #fff; 
-}
-cabeçalho {
- cor de fundo: # 000; 
- preenchimento: 10px; 
- preenchimento: 10px 20px; 
- Display: Flex; 
- alinhar itens: centro; 
-}
-.logotipo {
- altura: 40px; 
-}
-.escondido {
- exibição: nenhuma; 
-}
-.botões de cabeçalho {
- margem esquerda: automático; 
- Display: Flex; 
- Lacuna: 10px; 
-}
-.cabeçalho-btn {
- cor de fundo: transparente; 
- cor: branco; 
- borda: 1px branco sólido; 
- preenchimento: 8px 15px; 
- cursor: ponteiro; 
- transição: 0,3s; 
-}
-.header-btn:hover {
- cor de fundo: branco; 
- Cor: Preto; 
-}
-Seção .info {
- preenchimento: 20px; 
- cor de fundo: #fff; 
- cor: #000; 
-}
-.estandarte {
- plano de fundo: url('img/R.jpeg') centro/capa central sem repetição; 
- altura: 300px; 
- Display: Flex; 
- alinhar itens: centro; 
- justificar-conteúdo: centro; 
- posição: relativa; 
- cor: branco; 
- sombra de texto: 1px 1px 3px #000; 
- alinhamento de texto: centro; 
- preenchimento: 40px 20px; 
-}
-
-.banner h1 { 
-  font-size: 2em;
-  color: #fff; /* se quiser branco */
-}
-
-.banner::after {
- conteúdo: ""; 
- Posição: Absoluto; 
-  top: 0;
- esquerda: 0; 
- largura: 100%; 
- altura: 100%; 
-@@ -57,54 +82,72 @@ cabeçalho {
- cor de fundo: # 222; 
- borda: 1px sólido # 333; 
- raio da borda: 8px; 
- preenchimento: 15px; 
- margem: 10px; 
- largura: 300px; 
- alinhamento de texto: centro; 
-}
-.service h2 { 
-  font-size: 1.1em;
- margem inferior: 10px; 
-}
-.service p { 
-  font-size: 0.95em;
- margem inferior: 10px; 
-}
-.whatsapp {
- exibição: bloco embutido; 
- preenchimento: 10px 15px; 
- cor de fundo: #25D366; 
- cor: branco; 
- raio da borda: 5px; 
- decoração de texto: nenhum; 
- peso da fonte: negrito; 
-}
-.seção de reserva {
- alinhamento de texto: centro; 
- preenchimento: 40px; 
- cor de fundo: #1a1a1a; 
-}
-.formulário de reserva {
- largura máxima: 400px; 
- Margem: Auto; 
- Display: Flex; 
- flex-direção: coluna; 
- Lacuna: 10px; 
-}
-.booking-form, 
-.booking-form { 
- largura: 100%; 
- preenchimento: 10px; 
- raio da borda: 5px; 
- borda: nenhuma; 
-}
-.booking-form entrada { 
- cor de fundo: #fff; 
- cor: #000; 
-}
-.booking-form { 
- cor de fundo: #25D366; 
- Cor: #fff; 
- cursor: ponteiro; 
- peso da fonte: negrito; 
-}
-Botão .booking-form:hover { 
- filtro: brilho (1.1); 
-}
-rodapé {
- cor de fundo: # 000; 
- Cor: #fff; 
- Display: Flex; 
- justify-content: espaço ao redor; 
- preenchimento: 20px; 
- flex-wrap: envoltório; 
- alinhamento de texto: centro; 
- Cor: #777; 
- preenchimento: 20px; 
-}
-  rodapé a { 
- Cor: #25D366; 
- decoração de texto: nenhum; 
-    }
-    .história-btn {
- margem esquerda: automático; 
- cor de fundo: transparente; 
- cor: branco; 
- borda: 1px branco sólido; 
- preenchimento: 8px 15px; 
- cursor: ponteiro; 
- transição: 0,3s; 
-}
-
-.historia-btn:hover {
- cor de fundo: branco; 
- Cor: Preto; 
-}
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/style.css b/style.css
+index cde7dce70e83a5579b3ebed382b97a44e4ca3821..b7038a2963877f3a6739720cea4712ba43654e95 100644
+--- a/style.css
++++ b/style.css
+@@ -1,42 +1,59 @@
+ 
+ body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #111;
+   color: #fff;
+ }
+ header {
+   background-color: #000;
+-  padding: 10px;
++  padding: 10px 20px;
+   display: flex;
+   align-items: center;
+ }
+ .logo {
+   height: 40px;
+ }
++.header-buttons {
++  margin-left: auto;
++  display: flex;
++  gap: 10px;
++}
++.header-btn {
++  background-color: transparent;
++  color: white;
++  border: 1px solid white;
++  padding: 8px 15px;
++  cursor: pointer;
++  transition: 0.3s;
++}
++.header-btn:hover {
++  background-color: white;
++  color: black;
++}
+ .banner {
+   background: url('img/R.jpeg') no-repeat center center/cover;
+   height: 300px;
+   display: flex;
+   align-items: center;
+   justify-content:center;
+   position: relative;
+   color: white;
+   text-shadow: 1px 1px 3px #000;
+   text-align: center;
+   padding: 40px 20px;
+ }
+ 
+ .banner h1 {
+   font-size: 2em;
+   color: #fff; /* se quiser branco */
+ }
+ 
+ .banner::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+@@ -71,40 +88,26 @@ header {
+   margin-bottom: 10px;
+ }
+ .whatsapp {
+   display: inline-block;
+   padding: 10px 15px;
+   background-color: #25D366;
+   color: white;
+   border-radius: 5px;
+   text-decoration: none;
+   font-weight: bold;
+ }
+ footer {
+   background-color: #000;
+   color: #fff;
+   display: flex;
+   justify-content: space-around;
+   padding: 20px;
+   flex-wrap: wrap;
+   text-align: center;
+   color: #777;
+   padding: 20px;
+ }
+ footer a {
+   color: #25D366;
+   text-decoration: none;
+-    }
+-    .historia-btn {
+-  margin-left: auto;
+-  background-color: transparent;
+-  color: white;
+-  border: 1px solid white;
+-  padding: 8px 15px;
+-  cursor: pointer;
+-  transition: 0.3s;
+-}
+-
+-.historia-btn:hover {
+-  background-color: white;
+-  color: black;
+ }
+ 
+EOF
+)
