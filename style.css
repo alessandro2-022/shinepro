@@ -1,110 +1,158 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/style.css b/style.css
-index cde7dce70e83a5579b3ebed382b97a44e4ca3821..b7038a2963877f3a6739720cea4712ba43654e95 100644
---- a/style.css
-+++ b/style.css
-@@ -1,42 +1,59 @@
- 
- body {
-   font-family: Arial, sans-serif;
-   margin: 0;
-   padding: 0;
-   background-color: #111;
-   color: #fff;
- }
- header {
-   background-color: #000;
--  padding: 10px;
-+  padding: 10px 20px;
-   display: flex;
-   align-items: center;
- }
- .logo {
-   height: 40px;
- }
-+.header-buttons {
-+  margin-left: auto;
-+  display: flex;
-+  gap: 10px;
-+}
-+.header-btn {
-+  background-color: transparent;
-+  color: white;
-+  border: 1px solid white;
-+  padding: 8px 15px;
-+  cursor: pointer;
-+  transition: 0.3s;
-+}
-+.header-btn:hover {
-+  background-color: white;
-+  color: black;
-+}
- .banner {
-   background: url('img/R.jpeg') no-repeat center center/cover;
-   height: 300px;
-   display: flex;
-   align-items: center;
-   justify-content:center;
-   position: relative;
-   color: white;
-   text-shadow: 1px 1px 3px #000;
-   text-align: center;
-   padding: 40px 20px;
- }
- 
- .banner h1 {
-   font-size: 2em;
-   color: #fff; /* se quiser branco */
- }
- 
- .banner::after {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-@@ -71,40 +88,26 @@ header {
-   margin-bottom: 10px;
- }
- .whatsapp {
-   display: inline-block;
-   padding: 10px 15px;
-   background-color: #25D366;
-   color: white;
-   border-radius: 5px;
-   text-decoration: none;
-   font-weight: bold;
- }
- footer {
-   background-color: #000;
-   color: #fff;
-   display: flex;
-   justify-content: space-around;
-   padding: 20px;
-   flex-wrap: wrap;
-   text-align: center;
-   color: #777;
-   padding: 20px;
- }
- footer a {
-   color: #25D366;
-   text-decoration: none;
--    }
--    .historia-btn {
--  margin-left: auto;
--  background-color: transparent;
--  color: white;
--  border: 1px solid white;
--  padding: 8px 15px;
--  cursor: pointer;
--  transition: 0.3s;
--}
--
--.historia-btn:hover {
--  background-color: white;
--  color: black;
- }
- 
-EOF
-)
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShinePro Estética Automotiva</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <header>
+    <img src="logo-shinepro.png.png" alt="Logo ShinePro" class="logo">
+     <button id="btnHistoria" class="historia-btn">Sobre Nós</button>
+  </header>
+<section id="historia" style="display: none; padding: 20px; background-color: white; color: black;">
+  <h2>Sobre a ShinePro</h2>
+  <p>
+    A ShinePro Estética Automotiva nasceu com o propósito de transformar veículos, trazendo brilho, proteção e cuidado profissional.
+    Trabalhamos com paixão para entregar o melhor resultado e superar expectativas.
+  </p>
+</section>
+
+ <section class="banner" style="
+    background-image: url('banner.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+">
+    <h1 class="banner.png" style="text-align: center;">
+    <h1>Bem-vindo à ShinePro Estética Automotiva</h1>
+    </h1>
+</section>
+
+  <section class="services">
+    <div class="service">
+      <h2>Limpeza Externa Premium</h2>
+      <p>Remove sujeira superficial. Ideal para manutenção rápida. R$ 60 a R$ 90</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Limpeza Simples</h2>
+      <p>Limpeza interna e externa com cera líquida premium. R$ 80 a R$ 100</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Limpeza Premium Nº 1</h2>
+      <p>Limpeza completa com revitalização. R$ 100 a R$ 130</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Limpeza Premium Nº 2</h2>
+      <p>Inclui cera blend, pré-lavagem, limpeza completa. R$ 160 a R$ 200</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Limpeza Técnica para Motos Nº 1</h2>
+      <p>Limpeza detalhada com selante antiderrapante. R$ 120</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Limpeza Técnica para Motos Nº 2</h2>
+      <p>Com selante e revitalização plástica. R$ 220</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Higienização Interna</h2>
+      <p>Couro, teto, cintos, carpete. R$ 600 a R$ 700</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Tratamento do Motor</h2>
+      <p>Inspeção técnica e limpeza com proteção. R$ 120</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Tratamento de Couro</h2>
+      <p>Hidratação e proteção original. R$ 260</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Higienização de Estofados</h2>
+      <p>Limpeza profunda e remoção de odores. R$ 260 a R$ 280</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Polimento Comercial</h2>
+      <p>Correção de verniz + cera. R$ 450</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Polimento Técnico</h2>
+      <p>Com vitrificação. R$ 600 a R$ 900</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <div class="service">
+      <h2>Vitrificação</h2>
+      <p>Proteção cerâmica duradoura. A partir de R$ 1000</p>
+      <a class="whatsapp" href="http://wa.me/553239373903">Agendar pelo WhatsApp</a>
+    </div>
+    <!-- Mais pacotes e serviços individuais podem ser adicionados com base na sequência do catálogo -->
+  </section>
+
+ <section id="agendamento" style="text-align: center; padding: 40px; background-color: #1a1a1a;">
+    <h2>Agende seu Serviço</h2>
+    <form onsubmit="enviarWhatsApp(event)" style="max-width: 400px; margin: auto;">
+      <input type="text" id="nome" placeholder="Nome" required style="width: 100%; padding: 10px; margin: 10px 0;">
+      <input type="email" id="email" placeholder="Email" required style="width: 100%; padding: 10px; margin: 10px 0;">
+      <input type="tel" id="telefone" placeholder="Telefone" required style="width: 100%; padding: 10px; margin: 10px 0;">
+      <input type="text" id="veiculo" placeholder="Modelo do Veículo" required style="width: 100%; padding: 10px; margin: 10px 0;">
+      <input type="datetime-local" id="datahora" required style="width: 100%; padding: 10px; margin: 10px 0;">
+      <button type="submit" style="padding: 10px 20px; background-color: #25D366; color: #fff; border: none; border-radius: 5px;">Confirmar Agendamento</button>
+    </form>
+  </section>
+  
+  <footer>
+    <div>
+      <p>📍 <a href="https://g.co/kgs/94gkP8Z" target="_blank">localização</a></p>
+    </div>
+    <div>
+      <p>📸 <a href="https://www.instagram.com/shineprooficial_/" target="_blank">Instagram</a></p>
+    </div>
+    <div>
+      <p>📲 <a href="http://wa.me/553239373903" target="_blank">WhatsApp</a></p>
+    </div>
+    
+ </footer>
+  <footer style="text-align: center; padding-bottom: 10px; font-size: 0.8em; color: #777;">
+    &copy; 2025 ShinePro Estética Automotiva. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function enviarWhatsApp(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+      const veiculo = document.getElementById('veiculo').value;
+      const datahora = document.getElementById('datahora').value;
+
+      const mensagem = `*Agendamento ShinePro*%0A%0ANome: ${nome}%0AEmail: ${email}%0ATelefone: ${telefone}%0AVeículo: ${veiculo}%0AData/Hora: ${datahora}`;
+
+      window.open(`https://wa.me/553239373903?text=${mensagem}`, '_blank');
+    }
+  </script>
+<script>
+  document.getElementById("btnHistoria").addEventListener("click", function () {
+    const secao = document.getElementById("historia");
+    secao.style.display = secao.style.display === "none" ? "block" : "none";
+  });
+</script>
+
+</body>
+</html>
+
