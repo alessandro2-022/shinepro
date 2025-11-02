@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!-- Configurações básicas de metadados do documento -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShinePro Estética Automotiva</title>
+
+    <!-- Script para incluir e configurar o Tailwind CSS diretamente no HTML -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Objeto de configuração para estender o tema padrão do Tailwind
+      tailwind.config = {
+        theme: {
+          extend: {
+            // Definição de cores personalizadas para o projeto
+            colors: {
+              'shinepro-dark': '#1a1a1a',
+              'shinepro-light': '#2c2c2c',
+              'shinepro-gold': '#d4af37',
+              'whatsapp-green': '#25D366',
+            },
+            // Definição da fonte principal do site
+            fontFamily: {
+              'sans': ['Inter', 'sans-serif'],
+            },
+            // Definição de animações personalizadas
+            keyframes: {
+              'fade-in-down': {
+                '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'fade-in': { // Animação para os modais
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              }
+            },
+            // Mapeamento das animações para classes de utilitário
+            animation: {
+              'fade-in-down': 'fade-in-down 0.6s ease-out forwards',
+              'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+              'fade-in': 'fade-in 0.3s ease-out forwards',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Pré-conexão com os servidores de fontes do Google para otimização -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importação da fonte 'Inter' com diferentes pesos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  
+    <!-- O 'importmap' abaixo cuida de carregar o React e ReactDOM como módulos ES6. -->
+    <!-- As tags <script> separadas para o React 18 foram removidas para evitar conflitos. -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0"
+      }
+    }
+    </script>
+</head>
+  <body class="bg-shinepro-dark">
+    <!-- O elemento 'root' é onde a aplicação React será montada -->
+    <div id="root"></div>
+    <!-- Carrega o script principal da sua aplicação como um módulo -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
