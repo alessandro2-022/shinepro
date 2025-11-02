@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -59,7 +58,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   
     <!-- O 'importmap' abaixo cuida de carregar o React e ReactDOM como módulos ES6. -->
-    <!-- As tags <script> separadas para o React 18 foram removidas para evitar conflitos. -->
     <script type="importmap">
     {
       "imports": {
@@ -69,11 +67,19 @@
       }
     }
     </script>
+    
+    <!-- Adiciona o Babel Standalone para "traduzir" o código JSX/TSX em tempo real no navegador -->
+    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
 </head>
   <body class="bg-shinepro-dark">
     <!-- O elemento 'root' é onde a aplicação React será montada -->
     <div id="root"></div>
-    <!-- Carrega o script principal da sua aplicação como um módulo -->
-    <script type="module" src="/index.tsx"></script>
+    <!-- 
+      Carrega o script principal da sua aplicação. 
+      - type="text/babel" instrui o Babel a traduzir este arquivo.
+      - data-presets="react,typescript" informa ao Babel como traduzir o código (sintaxe de React e TypeScript).
+      - data-type="module" é crucial para que os 'imports' e 'exports' funcionem corretamente.
+    -->
+    <script type="text/babel" data-presets="react,typescript" data-type="module" src="/index.tsx"></script>
   </body>
 </html>
