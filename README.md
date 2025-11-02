@@ -33,7 +33,9 @@ O projeto é organizado da seguinte forma para manter o código limpo e modular:
 │   ├── Footer.tsx
 │   ├── Header.tsx
 │   ├── ServiceCard.tsx
-│   └── Services.tsx
+│   ├── Services.tsx
+│   ├── TestimonialCard.tsx
+│   └── Testimonials.tsx
 │
 ├── App.tsx              # Componente raiz que organiza a estrutura da página
 ├── constants.ts         # Armazena dados constantes (nº de WhatsApp, lista de serviços)
