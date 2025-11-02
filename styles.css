@@ -1,0 +1,14 @@
+/* Estilos personalizados que complementam o Tailwind CSS */
+
+/* 
+  Esta classe aplica um gradiente dourado ao texto.
+  - `background-image`: Cria o gradiente linear.
+  - `background-clip: text`: Faz com que o gradiente seja aplicado apenas ao texto, não à caixa do elemento.
+  - `color: transparent`: Torna o texto transparente para que o gradiente de fundo fique visível através dele.
+*/
+.text-gradient-gold {
+  background-image: linear-gradient(45deg, #d4af37, #f0e68c, #d4af37);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

@@ -8,7 +8,7 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título e subtítulo da seção */}
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-black text-white">Sobre a ShinePro</h2>
+          <h2 className="text-3xl sm:text-4xl font-black text-white text-gradient-gold">Sobre a ShinePro</h2>
           <div className="mt-4 mb-6 w-24 h-1 bg-shinepro-gold mx-auto rounded"></div>
           <p className="text-lg text-gray-300 leading-relaxed">
             A ShinePro Estética Automotiva nasceu com o propósito de transformar veículos, trazendo brilho, proteção e cuidado profissional.

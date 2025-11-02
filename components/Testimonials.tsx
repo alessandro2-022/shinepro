@@ -40,7 +40,7 @@ const Testimonials: React.FC = () => {
     <section className="bg-shinepro-light py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-black text-white">O Que Nossos Clientes Dizem</h2>
+          <h2 className="text-3xl sm:text-4xl font-black text-white text-gradient-gold">O Que Nossos Clientes Dizem</h2>
           <p className="mt-4 text-lg text-gray-400">A satisfação de quem confia em nosso trabalho.</p>
           <div className="mt-4 w-24 h-1 bg-shinepro-gold mx-auto rounded"></div>
         </div>
@@ -53,10 +53,18 @@ const Testimonials: React.FC = () => {
          
 
           {/* Botões de Navegação */}
-          <button onClick={goToPrevious} className="absolute top-1/2 -left-4 md:-left-12 transform -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-white hover:bg-shinepro-gold hover:text-shinepro-dark transition-colors duration-300 focus:outline-none">
+          <button 
+            onClick={goToPrevious} 
+            className="absolute top-1/2 -left-4 md:-left-12 transform -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-white hover:bg-shinepro-gold hover:text-shinepro-dark transition-colors duration-300 focus:outline-none"
+            aria-label="Ir para depoimento anterior"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
           </button>
-          <button onClick={goToNext} className="absolute top-1/2 -right-4 md:-right-12 transform -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-white hover:bg-shinepro-gold hover:text-shinepro-dark transition-colors duration-300 focus:outline-none">
+          <button 
+            onClick={goToNext} 
+            className="absolute top-1/2 -right-4 md:-right-12 transform -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-white hover:bg-shinepro-gold hover:text-shinepro-dark transition-colors duration-300 focus:outline-none"
+            aria-label="Ir para próximo depoimento"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
           </button>
         </div>
