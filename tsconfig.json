@@ -10,15 +10,16 @@
       "DOM.Iterable"
     ],
     "skipLibCheck": true,
-    "types": [
-      "node"
-    ],
+    "types": [],
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "moduleDetection": "force",
     "allowJs": true,
     "jsx": "react-jsx",
     "paths": {
+      "react": ["https://esm.sh/react@18.3.1"],
+      "react-dom/client": ["https://esm.sh/react-dom@18.3.1/client"],
+      "react/jsx-runtime": ["https://esm.sh/react@18.3.1/jsx-runtime"],
       "@/*": [
         "./*"
       ]

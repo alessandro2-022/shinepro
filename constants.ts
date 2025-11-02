@@ -1,5 +1,5 @@
 // Importa as interfaces para garantir que os dados sigam a estrutura correta
-import { Service, Testimonial } from './types';
+import { Service, Testimonial } from './types.ts';
 
 // Constante para o número de WhatsApp (formato internacional sem '+' ou '00')
 export const WHATSAPP_NUMBER = '553239373903';

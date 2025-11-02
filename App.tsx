@@ -1,13 +1,13 @@
 // Importa o React e o hook 'useState' para gerenciar o estado do componente
 import React, { useState } from 'react';
 // Importa os componentes que formam a estrutura da página
-import Header from './components/Header';
-import Banner from './components/Banner';
-import Services from './components/Services';
-import Testimonials from './components/Testimonials'; // Importa o novo componente
-import Footer from './components/Footer';
-import AboutModal from './components/AboutModal';
-import BookingModal from './components/BookingModal';
+import Header from './components/Header.tsx';
+import Banner from './components/Banner.tsx';
+import Services from './components/Services.tsx';
+import Testimonials from './components/Testimonials.tsx';
+import Footer from './components/Footer.tsx';
+import AboutModal from './components/AboutModal.tsx';
+import BookingModal from './components/BookingModal.tsx';
 
 // Definição do componente funcional principal da aplicação
 const App: React.FC = () => {
@@ -29,7 +29,7 @@ const App: React.FC = () => {
         {/* Componente Banner, agora não precisa mais da função de agendamento */}
         <Banner />
         <Services />
-        <Testimonials /> {/* Adiciona a nova seção de depoimentos */}
+        <Testimonials />
       </main>
       {/* Componente Footer (rodapé) */}
       <Footer />

@@ -1,9 +1,9 @@
 
 import React from 'react';
 // Importa os dados dos serviços e o link do WhatsApp do arquivo de constantes
-import { servicesData, WHATSAPP_LINK } from '../constants';
+import { servicesData, WHATSAPP_LINK } from '../constants.ts';
 // Importa o componente que renderiza um único card de serviço
-import ServiceCard from './ServiceCard';
+import ServiceCard from './ServiceCard.tsx';
 
 // Definição do componente funcional Services
 // Este componente exibe a seção de serviços da empresa

@@ -1,7 +1,7 @@
 
 import React from 'react';
 // Importa a interface 'Service' para tipar as propriedades
-import { Service } from '../types';
+import { Service } from '../types.ts';
 
 // Define as propriedades (props) que o componente ServiceCard espera receber
 interface ServiceCardProps {

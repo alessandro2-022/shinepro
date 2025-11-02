@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { testimonialsData } from '../constants';
-import TestimonialCard from './TestimonialCard';
+import { testimonialsData } from '../constants.ts';
+import TestimonialCard from './TestimonialCard.tsx';
 
 const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
