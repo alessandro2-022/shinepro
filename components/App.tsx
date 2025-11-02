@@ -20,10 +20,8 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-shinepro-dark text-white font-sans">
       {/* Componente Header, que recebe funções para abrir os modais */}
-      <Header 
-        onToggleAbout={() => setIsAboutOpen(!isAboutOpen)} 
-        onToggleBooking={() => setIsBookingOpen(!isBookingOpen)}
-      />
+      {/* FIX: Removed onToggleAbout and onToggleBooking props as the Header component no longer accepts them. */}
+      <Header />
       {/* Conteúdo principal da página */}
       <main>
         {/* Componente Banner, agora não precisa mais da função de agendamento */}

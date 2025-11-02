@@ -5,14 +5,11 @@ Esta é uma landing page moderna e responsiva para a **ShinePro Estética Automo
 ## ✨ Funcionalidades Principais
 
 - **Design Moderno e Responsivo**: Interface elegante com um tema escuro e detalhes em dourado, totalmente adaptável a desktops, tablets e smartphones.
+- **Fluxo de Página Única**: Uma experiência de rolagem contínua que apresenta a empresa, seus serviços e depoimentos de forma fluida.
 - **Catálogo de Serviços Detalhado**: Uma seção dedicada que exibe todos os serviços oferecidos em cards individuais, com título, descrição e preço.
-- **Integração com WhatsApp**:
-  - **Agendamento por Serviço**: Cada card de serviço possui um botão "Agendar Serviço" que abre o WhatsApp com uma mensagem pré-definida, mencionando o serviço de interesse.
-  - **Agendamento Geral**: Um modal de agendamento com um formulário completo (nome, email, telefone, veículo, data/hora) que gera uma mensagem formatada e detalhada para o WhatsApp.
-- **Modais Interativos**:
-  - **Sobre Nós**: Um modal que apresenta a missão e os valores da empresa.
-  - **Agendamento**: O modal de formulário para facilitar o agendamento.
-- **UI/UX Aprimorada**: Animações sutis, um cabeçalho fixo com efeito de desfoque e uma experiência de usuário fluida e intuitiva.
+- **Integração Direta com WhatsApp**: Todos os botões de "Agendar" (no cabeçalho e nos cards de serviço) abrem o WhatsApp instantaneamente, removendo barreiras e simplificando o contato.
+- **Seção Sobre Nós Integrada**: A história e a missão da empresa são apresentadas diretamente na página para criar uma conexão imediata com o cliente.
+- **UI/UX Aprimorada**: Animações sutis, um cabeçalho fixo com efeito de desfoque e navegação com rolagem suave para uma experiência de usuário premium.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -27,9 +24,8 @@ O projeto é organizado da seguinte forma para manter o código limpo e modular:
 ```
 /
 ├── components/          # Contém todos os componentes React reutilizáveis
-│   ├── AboutModal.tsx
+│   ├── About.tsx
 │   ├── Banner.tsx
-│   ├── BookingModal.tsx
 │   ├── Footer.tsx
 │   ├── Header.tsx
 │   ├── ServiceCard.tsx
@@ -54,4 +50,4 @@ Para modificar informações importantes da landing page, edite os seguintes arq
 - **Serviços Oferecidos**: Abra o arquivo `constants.ts` e modifique o array `servicesData`. Você pode adicionar, remover ou editar qualquer serviço.
 - **Número de WhatsApp**: No mesmo arquivo `constants.ts`, altere o valor da constante `WHATSAPP_NUMBER`.
 - **Cores e Fontes**: A configuração do tema do Tailwind CSS está no `index.html`, dentro da tag `<script>`. Você pode alterar as cores na seção `tailwind.config.theme.extend.colors`.
-- **Textos e Imagens**: Para alterar textos de componentes como o Banner ou o Rodapé, edite diretamente os arquivos JSX correspondentes em `components/`. A imagem principal do banner é definida no `components/Banner.tsx`.
+- **Textos e Imagens**: Para alterar textos de componentes como o Banner, Sobre Nós ou Rodapé, edite diretamente os arquivos JSX correspondentes em `components/`. A imagem principal do banner é definida no `components/Banner.tsx`.

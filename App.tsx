@@ -1,42 +1,32 @@
-// Importa o React e o hook 'useState' para gerenciar o estado do componente
-import React, { useState } from 'react';
+// Importa o React
+import React from 'react';
 // Importa os componentes que formam a estrutura da página
 import Header from './components/Header.tsx';
 import Banner from './components/Banner.tsx';
+import About from './components/About.tsx'; // Novo componente
 import Services from './components/Services.tsx';
 import Testimonials from './components/Testimonials.tsx';
 import Footer from './components/Footer.tsx';
-import AboutModal from './components/AboutModal.tsx';
-import BookingModal from './components/BookingModal.tsx';
 
 // Definição do componente funcional principal da aplicação
 const App: React.FC = () => {
-  // Cria um estado 'isAboutOpen' para controlar a visibilidade do modal "Sobre Nós"
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
-  // Cria um estado 'isBookingOpen' para controlar a visibilidade do modal de agendamento
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  // O estado para controlar os modais foi removido para simplificar a experiência.
 
   // Retorna a estrutura JSX da aplicação
   return (
     <div className="min-h-screen bg-shinepro-dark text-white font-sans">
-      {/* Componente Header, que recebe funções para abrir os modais */}
-      <Header 
-        onToggleAbout={() => setIsAboutOpen(!isAboutOpen)} 
-        onToggleBooking={() => setIsBookingOpen(!isBookingOpen)}
-      />
+      {/* O Header agora não precisa mais de funções para controlar modais */}
+      <Header />
       {/* Conteúdo principal da página */}
       <main>
-        {/* Componente Banner, agora não precisa mais da função de agendamento */}
         <Banner />
+        <About /> {/* Nova seção "Sobre Nós" adicionada diretamente à página */}
         <Services />
         <Testimonials />
       </main>
       {/* Componente Footer (rodapé) */}
       <Footer />
-      {/* Componente Modal "Sobre Nós", controlado pelo estado 'isAboutOpen' */}
-      <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
-      {/* Componente Modal de Agendamento, controlado pelo estado 'isBookingOpen' */}
-      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+      {/* Os componentes de Modal foram removidos daqui */}
     </div>
   );
 };

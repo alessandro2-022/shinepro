@@ -1,13 +1,9 @@
 import React from 'react';
+// Importa o link do WhatsApp para o botão de agendamento principal
+import { WHATSAPP_LINK } from '../constants.ts';
 
-// Define as propriedades (props) que o componente Header espera receber
-interface HeaderProps {
-  onToggleAbout: () => void;   // Função a ser chamada quando o botão "Sobre Nós" for clicado
-  onToggleBooking: () => void; // Função a ser chamada quando o botão "Agendar" for clicado
-}
-
-// Definição do componente funcional Header
-const Header: React.FC<HeaderProps> = ({ onToggleAbout, onToggleBooking }) => {
+// O componente não precisa mais receber propriedades para controlar modais
+const Header: React.FC = () => {
   return (
     // 'header' com classes do Tailwind para estilização
     // 'sticky top-0' faz o header ficar fixo no topo da página ao rolar
@@ -22,14 +18,19 @@ const Header: React.FC<HeaderProps> = ({ onToggleAbout, onToggleBooking }) => {
         </div>
         {/* Navegação */}
         <nav className="flex items-center space-x-2 sm:space-x-4">
-          {/* Botão para abrir o modal "Sobre Nós" */}
-          <button onClick={onToggleAbout} className="text-sm sm:text-base font-semibold text-gray-300 hover:text-shinepro-gold transition-colors duration-300 px-3 py-2 rounded-md">
+          {/* O botão "Sobre Nós" agora é um link de âncora para rolar até a seção */}
+          <a href="#about" className="text-sm sm:text-base font-semibold text-gray-300 hover:text-shinepro-gold transition-colors duration-300 px-3 py-2 rounded-md">
             Sobre Nós
-          </button>
-          {/* Botão para abrir o modal de agendamento */}
-          <button onClick={onToggleBooking} className="text-sm sm:text-base font-semibold bg-shinepro-gold text-shinepro-dark px-3 py-2 sm:px-4 sm:py-2 rounded-full hover:bg-yellow-300 transition-transform duration-300 ease-in-out transform hover:scale-105">
+          </a>
+          {/* O botão de agendamento agora é um link direto para o WhatsApp */}
+          <a 
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm sm:text-base font-semibold bg-shinepro-gold text-shinepro-dark px-3 py-2 sm:px-4 sm:py-2 rounded-full hover:bg-yellow-300 transition-transform duration-300 ease-in-out transform hover:scale-105"
+          >
             Agendar
-          </button>
+          </a>
         </nav>
       </div>
     </header>
