@@ -13,41 +13,28 @@ Esta é uma landing page moderna e responsiva para a **ShinePro Estética Automo
 
 ## 🚀 Tecnologias Utilizadas
 
-- **React**: Biblioteca JavaScript para a construção da interface de usuário.
-- **TypeScript**: Superset do JavaScript que adiciona tipagem estática, aumentando a robustez e a manutenibilidade do código.
-- **Tailwind CSS**: Framework CSS utility-first para estilização rápida e customizável. A configuração é feita diretamente no `index.html` para simplicidade.
+- **HTML5**: Estrutura semântica para o conteúdo da página.
+- **CSS3 com Tailwind CSS**: Estilização moderna e responsiva através de um framework utility-first. A configuração do Tailwind é feita via CDN no `index.html`.
+- **JavaScript (ES6)**: Para funcionalidades interativas, como o carrossel de depoimentos.
 
 ## 📂 Estrutura do Projeto
 
-O projeto é organizado da seguinte forma para manter o código limpo e modular:
+O projeto foi simplificado para uma estrutura de site estático clássica:
 
 ```
 /
-├── components/          # Contém todos os componentes React reutilizáveis
-│   ├── About.tsx
-│   ├── Banner.tsx
-│   ├── Footer.tsx
-│   ├── Header.tsx
-│   ├── ServiceCard.tsx
-│   ├── Services.tsx
-│   ├── TestimonialCard.tsx
-│   └── Testimonials.tsx
-│
-├── App.tsx              # Componente raiz que organiza a estrutura da página
-├── constants.ts         # Armazena dados constantes (nº de WhatsApp, lista de serviços)
-├── types.ts             # Define as interfaces e tipos do TypeScript (ex: Service)
-│
-├── index.html           # Ponto de entrada HTML, onde o React é montado e o Tailwind é configurado
-├── index.tsx            # Ponto de entrada do React, onde o App é renderizado
+├── index.html           # O arquivo principal com toda a estrutura e conteúdo
+├── script.js            # Contém o código JavaScript para interatividade
+├── styles.css           # Estilos CSS personalizados adicionais
 ├── metadata.json        # Metadados do projeto
 └── README.md            # Documentação do projeto (este arquivo)
 ```
 
 ## 🎨 Customização
 
-Para modificar informações importantes da landing page, edite os seguintes arquivos:
+Para modificar informações importantes da landing page, edite diretamente o arquivo `index.html`:
 
-- **Serviços Oferecidos**: Abra o arquivo `constants.ts` e modifique o array `servicesData`. Você pode adicionar, remover ou editar qualquer serviço.
-- **Número de WhatsApp**: No mesmo arquivo `constants.ts`, altere o valor da constante `WHATSAPP_NUMBER`.
-- **Cores e Fontes**: A configuração do tema do Tailwind CSS está no `index.html`, dentro da tag `<script>`. Você pode alterar as cores na seção `tailwind.config.theme.extend.colors`.
-- **Textos e Imagens**: Para alterar textos de componentes como o Banner, Sobre Nós ou Rodapé, edite diretamente os arquivos JSX correspondentes em `components/`. A imagem principal do banner é definida no `components/Banner.tsx`.
+- **Serviços Oferecidos**: Encontre a seção com `id="services"` e edite o conteúdo dos cards.
+- **Número de WhatsApp**: Altere os links `href` que começam com `https://wa.me/`.
+- **Textos e Imagens**: Altere os textos e os URLs das imagens diretamente no HTML.
+- **Cores e Fontes**: A configuração do tema do Tailwind CSS está no `<head>` do `index.html`, dentro da tag `<script>`. Você pode alterar as cores na seção `tailwind.config.theme.extend.colors`.
