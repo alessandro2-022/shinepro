@@ -7,10 +7,11 @@ import { WHATSAPP_NUMBER } from '../constants';
 interface ModalProps {
   isOpen: boolean;  // Controla a visibilidade do modal
   onClose: () => void; // Função para fechar o modal
+  serviceTitle?: string | null; // Título do serviço (opcional)
 }
 
 // Definição do componente funcional BookingModal
-const BookingModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+const BookingModal: React.FC<ModalProps> = ({ isOpen, onClose, serviceTitle }) => {
   // 'useState' para armazenar os dados do formulário
   const [formData, setFormData] = useState({
     name: '',
@@ -47,7 +48,11 @@ const BookingModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     });
 
     // Monta a mensagem que será enviada. '%0A' representa uma quebra de linha em URLs.
-    const message = `*Agendamento ShinePro*%0A%0A*Nome:* ${name}%0A*Email:* ${email}%0A*Telefone:* ${phone}%0A*Veículo:* ${vehicle}%0A*Data/Hora Sugerida:* ${formattedDate}`;
+    let message = `*Agendamento ShinePro*%0A`;
+    if (serviceTitle) {
+      message += `%0A*Serviço:* ${serviceTitle}`;
+    }
+    message += `%0A%0A*Nome:* ${name}%0A*Email:* ${email}%0A*Telefone:* ${phone}%0A*Veículo:* ${vehicle}%0A*Data/Hora Sugerida:* ${formattedDate}`;
     
     // Cria a URL final para o WhatsApp e a abre em uma nova aba
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
@@ -69,6 +74,14 @@ const BookingModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           </svg>
         </button>
         <h2 className="text-3xl font-black text-shinepro-gold mb-6 text-center">Agende seu Serviço</h2>
+        
+        {/* Exibe o nome do serviço se ele foi selecionado */}
+        {serviceTitle && (
+            <p className="text-center text-lg text-gray-300 mb-4">
+                Serviço: <span className="font-bold text-white">{serviceTitle}</span>
+            </p>
+        )}
+
         {/* Formulário de agendamento */}
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Campos de entrada (input) para os dados do cliente */}

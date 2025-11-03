@@ -1,13 +1,19 @@
 
 import React from 'react';
-// Importa os dados dos serviços e o link do WhatsApp do arquivo de constantes
-import { servicesData, WHATSAPP_LINK } from '../constants.ts';
+// Importa os dados dos serviços
+import { servicesData } from '../constants.ts';
 // Importa o componente que renderiza um único card de serviço
 import ServiceCard from './ServiceCard.tsx';
 
+// Define as propriedades que o componente espera receber
+interface ServicesProps {
+  onOpenBookingModal: (serviceTitle: string) => void;
+}
+
+
 // Definição do componente funcional Services
 // Este componente exibe a seção de serviços da empresa
-const Services: React.FC = () => {
+const Services: React.FC<ServicesProps> = ({ onOpenBookingModal }) => {
   return (
     <section id="services" className="py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,7 +29,11 @@ const Services: React.FC = () => {
           {/* Mapeia (percorre) o array 'servicesData' */}
           {/* Para cada 'service' no array, renderiza um componente 'ServiceCard' */}
           {servicesData.map((service, index) => (
-            <ServiceCard key={index} service={service} whatsappLink={WHATSAPP_LINK} />
+            <ServiceCard 
+              key={index} 
+              service={service} 
+              onOpenBookingModal={onOpenBookingModal} 
+            />
           ))}
         </div>
       </div>

@@ -1,14 +1,14 @@
+
 import React from 'react';
-// Importa o link do WhatsApp para o botão de agendamento principal
-import { WHATSAPP_LINK } from '../constants.ts';
 
 // Define as propriedades que o componente Header irá receber
 interface HeaderProps {
   onOpenAboutModal: () => void;
+  onOpenBookingModal: (serviceTitle?: string) => void;
 }
 
-// O componente agora recebe a função para abrir o modal
-const Header: React.FC<HeaderProps> = ({ onOpenAboutModal }) => {
+// O componente agora recebe as funções para abrir os modais
+const Header: React.FC<HeaderProps> = ({ onOpenAboutModal, onOpenBookingModal }) => {
   return (
     // 'header' com classes do Tailwind para estilização
     // 'sticky top-0' faz o header ficar fixo no topo da página ao rolar
@@ -19,7 +19,8 @@ const Header: React.FC<HeaderProps> = ({ onOpenAboutModal }) => {
         {/* Seção do logo */}
         <div className="flex items-center">
           {/* O logo agora é a imagem completa da marca, com dimensões ajustadas para manter a proporção */}
-          <img src="https://i.ibb.co/tK21mRz/logo.png" alt="Logo ShinePro" class="h-16 w-16 rounded-full object-cover" />
+          {/* FIX: Changed 'class' attribute to 'className' for JSX compatibility. */}
+          <img src="https://i.ibb.co/tK21mRz/logo.png" alt="Logo ShinePro" className="h-16 w-16 rounded-full object-cover" />
         </div>
         {/* Navegação */}
         <nav className="flex items-center space-x-2 sm:space-x-4">
@@ -31,15 +32,14 @@ const Header: React.FC<HeaderProps> = ({ onOpenAboutModal }) => {
           >
             Sobre Nós
           </button>
-          {/* O botão de agendamento agora é um link direto para o WhatsApp */}
-          <a 
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* O botão de agendamento agora abre o modal de agendamento */}
+          <button 
+            type="button"
+            onClick={() => onOpenBookingModal()}
             className="text-sm sm:text-base font-semibold bg-shinepro-gold text-shinepro-dark px-3 py-2 sm:px-4 sm:py-2 rounded-full hover:bg-yellow-300 transition-transform duration-300 ease-in-out transform hover:scale-105"
           >
             Agendar
-          </a>
+          </button>
         </nav>
       </div>
     </header>
