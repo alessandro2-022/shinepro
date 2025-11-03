@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Logo from './Logo.tsx';
 
 // Define as propriedades que o componente Header irá receber
 interface HeaderProps {
@@ -18,9 +19,8 @@ const Header: React.FC<HeaderProps> = ({ onOpenAboutModal, onOpenBookingModal })
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
         {/* Seção do logo */}
         <div className="flex items-center">
-          {/* O logo agora é a imagem completa da marca, com dimensões ajustadas para manter a proporção */}
-          {/* FIX: Changed 'class' attribute to 'className' for JSX compatibility. */}
-          <img src="https://i.ibb.co/tK21mRz/logo.png" alt="Logo ShinePro" className="h-16 w-16 rounded-full object-cover" />
+          {/* O logo agora é renderizado pelo componente Logo.tsx */}
+          <Logo />
         </div>
         {/* Navegação */}
         <nav className="flex items-center space-x-2 sm:space-x-4">
