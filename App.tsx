@@ -7,22 +7,41 @@ import Services from './components/Services.tsx';
 import Testimonials from './components/Testimonials.tsx';
 import Footer from './components/Footer.tsx';
 import AboutModal from './components/AboutModal.tsx'; // Importa o componente do modal
+import BookingModal from './components/BookingModal.tsx'; // Importa o modal de agendamento
 
 // Definição do componente funcional principal da aplicação
 const App: React.FC = () => {
   // Estado para controlar a visibilidade do modal "Sobre Nós"
   const [isAboutModalOpen, setAboutModalOpen] = useState(false);
+  // FIX: Add state and handlers for the booking modal to fix missing prop errors.
+  // Estados para controlar o modal de agendamento
+  const [isBookingModalOpen, setBookingModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
+  // Função para abrir o modal de agendamento, opcionalmente com um título de serviço
+  const handleOpenBookingModal = (serviceTitle?: string) => {
+    setSelectedService(serviceTitle || null);
+    setBookingModalOpen(true);
+  };
+
+  // Função para fechar o modal de agendamento
+  const handleCloseBookingModal = () => {
+    setBookingModalOpen(false);
+  };
 
   // Retorna a estrutura JSX da aplicação
   return (
     <div className="min-h-screen bg-shinepro-dark text-white font-sans">
       {/* Passa a função para abrir o modal como propriedade para o Header */}
-      <Header onOpenAboutModal={() => setAboutModalOpen(true)} />
+      <Header
+        onOpenAboutModal={() => setAboutModalOpen(true)}
+        onOpenBookingModal={handleOpenBookingModal}
+      />
       {/* Conteúdo principal da página */}
       <main>
         <Banner />
         {/* A seção estática "Sobre Nós" foi removida daqui */}
-        <Services />
+        <Services onOpenBookingModal={handleOpenBookingModal} />
         <Testimonials />
       </main>
       {/* Componente Footer (rodapé) */}
@@ -31,6 +50,12 @@ const App: React.FC = () => {
       <AboutModal 
         isOpen={isAboutModalOpen} 
         onClose={() => setAboutModalOpen(false)} 
+      />
+      {/* Renderiza o modal de Agendamento com base no estado */}
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={handleCloseBookingModal}
+        serviceTitle={selectedService}
       />
     </div>
   );
