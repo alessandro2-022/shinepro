@@ -7,7 +7,7 @@ import Services from './Services.tsx';
 import Testimonials from './Testimonials.tsx';
 import Footer from './Footer.tsx';
 import AboutModal from './AboutModal.tsx';
-import BookingModal from './BookingModal.tsx'; // Importa o modal de agendamento
+import BookingModal from './BookingModal.tsx';
 
 // Definição do componente funcional principal da aplicação
 const App: React.FC = () => {

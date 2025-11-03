@@ -1,8 +1,8 @@
 // As importações do React e ReactDOM são resolvidas em tempo de execução pelo importmap no HTML.
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// Importação do componente principal da aplicação
-import App from './App.tsx';
+// Importação do componente principal da aplicação a partir de sua localização correta
+import App from './components/App.tsx';
 
 // Busca o elemento HTML com o id 'root' onde a aplicação será renderizada
 const rootElement = document.getElementById('root');
