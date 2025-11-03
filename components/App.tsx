@@ -1,13 +1,13 @@
 // Importa o React e o hook useState
 import React, { useState } from 'react';
 // Importa os componentes que formam a estrutura da página
-import Header from './components/Header.tsx';
-import Banner from './components/Banner.tsx';
-import Services from './components/Services.tsx';
-import Testimonials from './components/Testimonials.tsx';
-import Footer from './components/Footer.tsx';
-import AboutModal from './components/AboutModal.tsx';
-import BookingModal from './components/BookingModal.tsx'; // Importa o modal de agendamento
+import Header from './Header.tsx';
+import Banner from './Banner.tsx';
+import Services from './Services.tsx';
+import Testimonials from './Testimonials.tsx';
+import Footer from './Footer.tsx';
+import AboutModal from './AboutModal.tsx';
+import BookingModal from './BookingModal.tsx'; // Importa o modal de agendamento
 
 // Definição do componente funcional principal da aplicação
 const App: React.FC = () => {
